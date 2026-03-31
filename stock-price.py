@@ -1,16 +1,10 @@
 from twelvedata import TDClient
 import dash
-from dash import dcc, html
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-
-from twelvedata import TDClient
-import dash
 from dash import dcc, html, callback, Input, Output, State
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-td = TDClient(apikey="???????????????")
+td = TDClient(apikey="37c582b283d64233ab0177b38cc2a25c")
 
 # Create the Dash app
 app = dash.Dash(__name__, title='Stock Price Analyzer')
@@ -170,5 +164,4 @@ def update_chart(n_submit, symbol):
     return create_figure(symbol.upper())
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(host='0.0.0.0', port=8050, debug=False)
